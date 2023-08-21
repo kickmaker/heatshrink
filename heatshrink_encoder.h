@@ -4,7 +4,12 @@
 #include <stdint.h>
 #include <stddef.h>
 #include "heatshrink_common.h"
+
+#if CONFIG_ZEPHYR_HEATSHRINK_MODULE
+#include "zephyr/heatshrink_config.h"
+#else
 #include "heatshrink_config.h"
+#endif
 
 typedef enum {
     HSER_SINK_OK,               /* data sunk into input buffer */
