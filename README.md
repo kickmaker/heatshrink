@@ -1,5 +1,7 @@
 # heatshrink
 
+![Build artifacts](https://github.com/kickmaker/heatshrink/workflows/Build%20&%20test/badge.svg?branch=develop)
+
 A data compression/decompression library for embedded/real-time systems.
 
 
