@@ -7,6 +7,7 @@ Heatshrink has been forked from [this original project](https://github.com/atomi
 
 ![Build artifacts](https://github.com/kickmaker/heatshrink/actions/workflows/base_build_test.yml/badge.svg?branch=zephyr)
 ![Build artifacts](https://github.com/kickmaker/heatshrink/actions/workflows/zephyr_build_test.yml/badge.svg?branch=zephyr)
+![CodeQL](https://github.com/kickmaker/heatshrink/actions/workflows/codeql.yml/badge.svg?branch=zephyr)
 
 ## Key Features:
 
