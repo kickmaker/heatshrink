@@ -3,6 +3,10 @@
 Zephyr integration as external module of a data compression/decompression library for embedded/real-time systems.
 Heatshrink has been forked from [this original project](https://github.com/atomicobject/heatshrink).
 
+## Build Status
+
+![Build artifacts](https://github.com/kickmaker/heatshrink/actions/workflows/base_build_test.yml/badge.svg?branch=zephyr)
+![Build artifacts](https://github.com/kickmaker/heatshrink/actions/workflows/zephyr_build_test.yml/badge.svg?branch=zephyr)
 
 ## Key Features:
 
@@ -16,11 +20,6 @@ Heatshrink has been forked from [this original project](https://github.com/atomi
     The library doesn't impose any constraints on memory management.
 - **ISC license**
     You can use it freely, even for commercial purposes.
-
-## Build Status
-
-![Build artifacts](https://github.com/kickmaker/heatshrink/workflows/Base%20build%20&%20test/badge.svg?branch=zephyr)
-![Build artifacts](https://github.com/kickmaker/heatshrink/workflows/Zephyr%20build%20&%20test/badge.svg?branch=zephyr)
 
 ## Zephyr integration: Getting started
 
