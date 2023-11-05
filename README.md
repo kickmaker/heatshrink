@@ -1,9 +1,12 @@
-# heatshrink
+# Heatshrink on Zephyr
 
-![Build artifacts](https://github.com/kickmaker/heatshrink/workflows/Build%20&%20test/badge.svg?branch=develop)
+Zephyr integration as external module of a data compression/decompression library for embedded/real-time systems.
+Heatshrink has been forked from [this original project](https://github.com/atomicobject/heatshrink).
 
-A data compression/decompression library for embedded/real-time systems.
+## Build Status
 
+![Build artifacts](https://github.com/kickmaker/heatshrink/actions/workflows/base_build_test.yml/badge.svg?branch=zephyr)
+![Build artifacts](https://github.com/kickmaker/heatshrink/actions/workflows/zephyr_build_test.yml/badge.svg?branch=zephyr)
 
 ## Key Features:
 
@@ -18,22 +21,92 @@ A data compression/decompression library for embedded/real-time systems.
 - **ISC license**
     You can use it freely, even for commercial purposes.
 
+## Zephyr integration: Getting started
 
-## Getting Started:
+Add this project as external module by appending your west.yml project file as:
 
-There is a standalone command-line program, `heatshrink`, but the
-encoder and decoder can also be used as libraries, independent of each
-other. To do so, copy `heatshrink_common.h`, `heatshrink_config.h`, and
-either `heatshrink_encoder.c` or `heatshrink_decoder.c` (and their
-respective header) into your project. For projects that use both,
-static libraries are built that use static and dynamic allocation.
+```
+manifest:
+  remotes:
+    - ...
+    - name: km
+      url-base: https://github.com/kickmaker 
 
-Dynamic allocation is used by default, but in an embedded context, you
-probably want to statically allocate the encoder/decoder. Set
-`HEATSHRINK_DYNAMIC_ALLOC` to 0 in `heatshrink_config.h`.
+  projects:
+    - ...
+    - name: heatshrink
+      remote: km
+      revision: zephyr
+      path: modules/lib/heatshrink
+```
+
+Then, update your Zephyr workspace:
+
+```
+west update
+```
+
+## Zephyr integration: Version
+
+For sustainability, it would be prefered to target a specific version:
+- [Zephyr 3.5 release](https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.5.0) : 90027f015c1446a1925c3d9a7fabbc8908c26f27
+
+```
+  projects:
+    - ...
+    - name: heatshrink
+      remote: km
+      revision: 90027f015c1446a1925c3d9a7fabbc8908c26f27
+      path: modules/lib/heatshrink
+```
+
+## Zephyr integration: Sample
+
+Samples exists in the `samples` folder.
+
+Go to the sample folder to build and run:
+
+```
+west build -b <your_board> -p
+```
+
+## Memory usage considerations
+
+This module (as original one) allows you to choose memory allocation strategy
+to fit footprints requirements.
+Heatshrink provides some settings to optimize / fine tune compression ratio VS 
+footprint usage.
+These parameters `window_sz2`, `lookahead_sz2` and `input_buffer_size` are explained in
+[Configuration](#configuration-official-heatshrink-documentation) chapter.
+
+### Static allocation
+
+In this mode (default mode, or CONFIG_HEATSHRINK_DYNAMIC_ALLOC=n), the module will reserve
+statically allocated memory space to process encoding and/or decoding, mainly based on parameters
+fixed at compilation time.
+
+- `window_sz2` : CONFIG_HEATSHRINK_STATIC_WINDOW_BITS
+- `lookahead_sz2` : CONFIG_HEATSHRINK_STATIC_LOOKAHEAD_BITS
+- `input_buffer_size` : CONFIG_HEATSHRINK_STATIC_INPUT_BUFFER_SIZE
+
+Please not that a file must be decoded with the same parameters as used for encoding.
+So, in this mode saving memory footprint, it comes to YOU to fix these parameters.
+
+### Dynamic allocation
+
+The most flexible solution from a software point of view (CONFIG_HEATSHRINK_DYNAMIC_ALLOC=y).
+
+Heatshrink parameters could be changed at runtime but requires a heap.
+
+## Footprint
+
+By default, decoder and encoder are enabled. To save memory footprint you can disable them independantly:
+
+- CONFIG_HEATSHRINK_DECODER=n
+- CONFIG_HEATSHRINK_ENCODER=n
 
 
-### Basic Usage
+## Basic Usage (official Heatshrink documentation)
 
 1. Allocate a `heatshrink_encoder` or `heatshrink_decoder` state machine
 using their `alloc` function, or statically allocate one and call their
@@ -68,7 +141,7 @@ Sinking more data after `finish` has been called will not work without
 calling `reset` on the state machine.
 
 
-## Configuration
+## Configuration (official Heatshrink documentation)
 
 heatshrink has a couple configuration options, which impact its resource
 usage and how effectively it can compress data. These are set when
@@ -105,7 +178,7 @@ buffer (say, 1 byte) will add overhead due to lots of suspend/resume
 function calls, but should not change how well data compresses.
 
 
-### Recommended Defaults
+### Recommended Defaults (official Heatshrink documentation)
 
 For embedded/low memory contexts, a `window_sz2` in the 8 to 10 range is
 probably a good default, depending on how tight memory is. Smaller or
@@ -117,7 +190,7 @@ The `lookahead_sz2` should probably start near the `window_sz2`/2, e.g.
 how well test data works with different settings.
 
 
-## More Information and Benchmarks:
+## More Information and Benchmarks: (official Heatshrink documentation)
 
 heatshrink is based on [LZSS], since it's particularly suitable for
 compression in small amounts of memory. It can use an optional, small
@@ -134,7 +207,15 @@ documentation.
 [index]: http://spin.atomicobject.com/2014/01/13/lightweight-indexing-for-embedded-systems/
 [LZSS]: http://en.wikipedia.org/wiki/Lempel-Ziv-Storer-Szymanski
 
+## Contribution
 
-## Build Status
+Contributions are welcomed : feel free to open PR.
+zephyr branch is the default (and targeted one) according to Zephyr External modules
+guidelines.
 
-  [![Build Status](https://travis-ci.org/atomicobject/heatshrink.png)](http://travis-ci.org/atomicobject/heatshrink)
+### Thanks
+
+The following developers have already contributed to that module: 
+
+- [@ClovisCorde](https://github.com/ClovisCorde)
+- [@tyalie](https://github.com/tyalie)
