@@ -23,4 +23,4 @@
 /* Use indexing for faster compression. (This requires additional space.) */
 #define HEATSHRINK_USE_INDEX 1
 
-#endif
+#endif /* HEATSHRINK_CONFIG_H */
