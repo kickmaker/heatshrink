@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heatshrink decoder &mdash; Heatshrink on Zephyr 0.4.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=c87aa342"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Heatshrink encoder" href="heatshrink_encoder.html" />
+    <link rel="prev" title="Heatshrink API" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Heatshrink on Zephyr
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Heatshrink decoder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="heatshrink_encoder.html">Heatshrink encoder</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Heatshrink on Zephyr</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Heatshrink decoder</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/heatshrink_decoder.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="heatshrink-decoder">
+<h1>Heatshrink decoder<a class="headerlink" href="#heatshrink-decoder" title="Link to this heading"></a></h1>
+<p>Heatshrink Decoder API. </p>
+<p>This header file defines the API for the Heatshrink decoder library. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.HEATSHRINK_DECODER_INPUT_BUFFER_SIZE">
+<span class="target" id="heatshrink__decoder_8h_1a3b3baf032d76fc0b7d4cea7835d8bb29"></span><span class="sig-name descname"><span class="n"><span class="pre">HEATSHRINK_DECODER_INPUT_BUFFER_SIZE</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">BUF</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.HEATSHRINK_DECODER_INPUT_BUFFER_SIZE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.HEATSHRINK_DECODER_WINDOW_BITS">
+<span class="target" id="heatshrink__decoder_8h_1a3cc601bcb00c78a25d3a1942121e4ab9"></span><span class="sig-name descname"><span class="n"><span class="pre">HEATSHRINK_DECODER_WINDOW_BITS</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">BUF</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.HEATSHRINK_DECODER_WINDOW_BITS" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.HEATSHRINK_DECODER_LOOKAHEAD_BITS">
+<span class="target" id="heatshrink__decoder_8h_1aa86e36935dd90b762e16a029a5e6ab5f"></span><span class="sig-name descname"><span class="n"><span class="pre">HEATSHRINK_DECODER_LOOKAHEAD_BITS</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">BUF</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.HEATSHRINK_DECODER_LOOKAHEAD_BITS" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-enums">Enums</p>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv412HSD_sink_res">
+<span id="_CPPv312HSD_sink_res"></span><span id="_CPPv212HSD_sink_res"></span><span class="target" id="heatshrink__decoder_8h_1a2033fd60c913bbd5493f38529f4c5eeb"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HSD_sink_res</span></span></span><a class="headerlink" href="#_CPPv412HSD_sink_res" title="Link to this definition"></a><br /></dt>
+<dd><p>Sink result codes. </p>
+<p>These are the possible return values for the <code class="docutils literal notranslate"><span class="pre">heatshrink_decoder_sink</span></code> function. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12HSD_sink_res12HSDR_SINK_OKE">
+<span id="_CPPv3N12HSD_sink_res12HSDR_SINK_OKE"></span><span id="_CPPv2N12HSD_sink_res12HSDR_SINK_OKE"></span><span class="target" id="heatshrink__decoder_8h_1a2033fd60c913bbd5493f38529f4c5eeba589952f8375ea03d19d4c89033656b22"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HSDR_SINK_OK</span></span></span><a class="headerlink" href="#_CPPv4N12HSD_sink_res12HSDR_SINK_OKE" title="Link to this definition"></a><br /></dt>
+<dd><p>Data sunk successfully, ready to poll. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12HSD_sink_res14HSDR_SINK_FULLE">
+<span id="_CPPv3N12HSD_sink_res14HSDR_SINK_FULLE"></span><span id="_CPPv2N12HSD_sink_res14HSDR_SINK_FULLE"></span><span class="target" id="heatshrink__decoder_8h_1a2033fd60c913bbd5493f38529f4c5eebae68dbf5ea2ab0f19bf73c289c99fa375"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HSDR_SINK_FULL</span></span></span><a class="headerlink" href="#_CPPv4N12HSD_sink_res14HSDR_SINK_FULLE" title="Link to this definition"></a><br /></dt>
+<dd><p>Out of space in the internal buffer. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12HSD_sink_res20HSDR_SINK_ERROR_NULLE">
+<span id="_CPPv3N12HSD_sink_res20HSDR_SINK_ERROR_NULLE"></span><span id="_CPPv2N12HSD_sink_res20HSDR_SINK_ERROR_NULLE"></span><span class="target" id="heatshrink__decoder_8h_1a2033fd60c913bbd5493f38529f4c5eeba4896bd2b7b48033627ab1d7530d1843a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HSDR_SINK_ERROR_NULL</span></span></span><a class="headerlink" href="#_CPPv4N12HSD_sink_res20HSDR_SINK_ERROR_NULLE" title="Link to this definition"></a><br /></dt>
+<dd><p>NULL argument error. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv412HSD_poll_res">
+<span id="_CPPv312HSD_poll_res"></span><span id="_CPPv212HSD_poll_res"></span><span class="target" id="heatshrink__decoder_8h_1abd574439da270fe6682c4011a8e4a27a"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HSD_poll_res</span></span></span><a class="headerlink" href="#_CPPv412HSD_poll_res" title="Link to this definition"></a><br /></dt>
+<dd><p>Poll result codes. </p>
+<p>These are the possible return values for the <code class="docutils literal notranslate"><span class="pre">heatshrink_decoder_poll</span></code> function. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12HSD_poll_res15HSDR_POLL_EMPTYE">
+<span id="_CPPv3N12HSD_poll_res15HSDR_POLL_EMPTYE"></span><span id="_CPPv2N12HSD_poll_res15HSDR_POLL_EMPTYE"></span><span class="target" id="heatshrink__decoder_8h_1abd574439da270fe6682c4011a8e4a27aa8c6c36540f31619cd4693e3c9f00d931"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HSDR_POLL_EMPTY</span></span></span><a class="headerlink" href="#_CPPv4N12HSD_poll_res15HSDR_POLL_EMPTYE" title="Link to this definition"></a><br /></dt>
+<dd><p>Input exhausted. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12HSD_poll_res14HSDR_POLL_MOREE">
+<span id="_CPPv3N12HSD_poll_res14HSDR_POLL_MOREE"></span><span id="_CPPv2N12HSD_poll_res14HSDR_POLL_MOREE"></span><span class="target" id="heatshrink__decoder_8h_1abd574439da270fe6682c4011a8e4a27aa1f2aa0e4daf0877e05c6ce1dc70de044"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HSDR_POLL_MORE</span></span></span><a class="headerlink" href="#_CPPv4N12HSD_poll_res14HSDR_POLL_MOREE" title="Link to this definition"></a><br /></dt>
+<dd><p>More data remaining, call again with a fresh output buffer. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12HSD_poll_res20HSDR_POLL_ERROR_NULLE">
+<span id="_CPPv3N12HSD_poll_res20HSDR_POLL_ERROR_NULLE"></span><span id="_CPPv2N12HSD_poll_res20HSDR_POLL_ERROR_NULLE"></span><span class="target" id="heatshrink__decoder_8h_1abd574439da270fe6682c4011a8e4a27aad6aaf70030927b97298dc51f3c462edd"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HSDR_POLL_ERROR_NULL</span></span></span><a class="headerlink" href="#_CPPv4N12HSD_poll_res20HSDR_POLL_ERROR_NULLE" title="Link to this definition"></a><br /></dt>
+<dd><p>NULL argument error. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12HSD_poll_res23HSDR_POLL_ERROR_UNKNOWNE">
+<span id="_CPPv3N12HSD_poll_res23HSDR_POLL_ERROR_UNKNOWNE"></span><span id="_CPPv2N12HSD_poll_res23HSDR_POLL_ERROR_UNKNOWNE"></span><span class="target" id="heatshrink__decoder_8h_1abd574439da270fe6682c4011a8e4a27aaeb2610f1216851a5464d5ae1201d2191"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HSDR_POLL_ERROR_UNKNOWN</span></span></span><a class="headerlink" href="#_CPPv4N12HSD_poll_res23HSDR_POLL_ERROR_UNKNOWNE" title="Link to this definition"></a><br /></dt>
+<dd><p>Unknown error. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv414HSD_finish_res">
+<span id="_CPPv314HSD_finish_res"></span><span id="_CPPv214HSD_finish_res"></span><span class="target" id="heatshrink__decoder_8h_1a053a01631612e6c96c669e0431f996ce"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HSD_finish_res</span></span></span><a class="headerlink" href="#_CPPv414HSD_finish_res" title="Link to this definition"></a><br /></dt>
+<dd><p>Finish result codes. </p>
+<p>These are the possible return values for the <code class="docutils literal notranslate"><span class="pre">heatshrink_decoder_finish</span></code> function. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N14HSD_finish_res16HSDR_FINISH_DONEE">
+<span id="_CPPv3N14HSD_finish_res16HSDR_FINISH_DONEE"></span><span id="_CPPv2N14HSD_finish_res16HSDR_FINISH_DONEE"></span><span class="target" id="heatshrink__decoder_8h_1a053a01631612e6c96c669e0431f996cea092a572b5836b314cc20dee824869cae"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HSDR_FINISH_DONE</span></span></span><a class="headerlink" href="#_CPPv4N14HSD_finish_res16HSDR_FINISH_DONEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Output is done. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N14HSD_finish_res16HSDR_FINISH_MOREE">
+<span id="_CPPv3N14HSD_finish_res16HSDR_FINISH_MOREE"></span><span id="_CPPv2N14HSD_finish_res16HSDR_FINISH_MOREE"></span><span class="target" id="heatshrink__decoder_8h_1a053a01631612e6c96c669e0431f996cea4f329b4632e284f817a4d5017c843955"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HSDR_FINISH_MORE</span></span></span><a class="headerlink" href="#_CPPv4N14HSD_finish_res16HSDR_FINISH_MOREE" title="Link to this definition"></a><br /></dt>
+<dd><p>More output remains. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N14HSD_finish_res22HSDR_FINISH_ERROR_NULLE">
+<span id="_CPPv3N14HSD_finish_res22HSDR_FINISH_ERROR_NULLE"></span><span id="_CPPv2N14HSD_finish_res22HSDR_FINISH_ERROR_NULLE"></span><span class="target" id="heatshrink__decoder_8h_1a053a01631612e6c96c669e0431f996cea452a4c121fdea30a5d3432063e9ebf20"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HSDR_FINISH_ERROR_NULL</span></span></span><a class="headerlink" href="#_CPPv4N14HSD_finish_res22HSDR_FINISH_ERROR_NULLE" title="Link to this definition"></a><br /></dt>
+<dd><p>NULL argument error. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv424heatshrink_decoder_alloc8uint16_t7uint8_t7uint8_t">
+<span id="_CPPv324heatshrink_decoder_alloc8uint16_t7uint8_t7uint8_t"></span><span id="_CPPv224heatshrink_decoder_alloc8uint16_t7uint8_t7uint8_t"></span><span id="heatshrink_decoder_alloc__uint16_t.uint8_t.uint8_t"></span><span class="target" id="heatshrink__decoder_8h_1af45ef0e47f657a2148256f9027a491bf"></span><a class="reference internal" href="#_CPPv418heatshrink_decoder" title="heatshrink_decoder"><span class="n"><span class="pre">heatshrink_decoder</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">heatshrink_decoder_alloc</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">input_buffer_size</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">expansion_buffer_sz2</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lookahead_sz2</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424heatshrink_decoder_alloc8uint16_t7uint8_t7uint8_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Allocate a Heatshrink decoder. </p>
+<p>
+Allocate a decoder with an input buffer of INPUT_BUFFER_SIZE bytes, an expansion buffer size of 2^WINDOW_SZ2, and a lookahead size of 2^LOOKAHEAD_SZ2.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only for dynamic allocation mode</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_buffer_size</strong> – Size of the input buffer. </p></li>
+<li><p><strong>expansion_buffer_sz2</strong> – Size of the expansion buffer (window size). </p></li>
+<li><p><strong>lookahead_sz2</strong> – Lookahead size.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Pointer to the allocated decoder, or NULL on error. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv423heatshrink_decoder_freeP18heatshrink_decoder">
+<span id="_CPPv323heatshrink_decoder_freeP18heatshrink_decoder"></span><span id="_CPPv223heatshrink_decoder_freeP18heatshrink_decoder"></span><span id="heatshrink_decoder_free__heatshrink_decoderP"></span><span class="target" id="heatshrink__decoder_8h_1aeac9e95f74ac548b7c4c937d368958d1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">heatshrink_decoder_free</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv418heatshrink_decoder" title="heatshrink_decoder"><span class="n"><span class="pre">heatshrink_decoder</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">hsd</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423heatshrink_decoder_freeP18heatshrink_decoder" title="Link to this definition"></a><br /></dt>
+<dd><p>Free a Heatshrink decoder. </p>
+<p>
+Free the memory associated with a decoder.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only for dynamic allocation mode</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hsd</strong> – Pointer to the decoder to be freed. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv424heatshrink_decoder_resetP18heatshrink_decoder">
+<span id="_CPPv324heatshrink_decoder_resetP18heatshrink_decoder"></span><span id="_CPPv224heatshrink_decoder_resetP18heatshrink_decoder"></span><span id="heatshrink_decoder_reset__heatshrink_decoderP"></span><span class="target" id="heatshrink__decoder_8h_1a66f048d07fb882fce420541f3efe67d1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">heatshrink_decoder_reset</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv418heatshrink_decoder" title="heatshrink_decoder"><span class="n"><span class="pre">heatshrink_decoder</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">hsd</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424heatshrink_decoder_resetP18heatshrink_decoder" title="Link to this definition"></a><br /></dt>
+<dd><p>Reset a Heatshrink decoder. </p>
+<p>Reset a decoder to its initial state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hsd</strong> – Pointer to the decoder to be reset. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv423heatshrink_decoder_sinkP18heatshrink_decoderP7uint8_t6size_tP6size_t">
+<span id="_CPPv323heatshrink_decoder_sinkP18heatshrink_decoderP7uint8_t6size_tP6size_t"></span><span id="_CPPv223heatshrink_decoder_sinkP18heatshrink_decoderP7uint8_t6size_tP6size_t"></span><span id="heatshrink_decoder_sink__heatshrink_decoderP.uint8_tP.s.sP"></span><span class="target" id="heatshrink__decoder_8h_1a7c918c86f737484d646de78f0b5116e2"></span><a class="reference internal" href="#_CPPv412HSD_sink_res" title="HSD_sink_res"><span class="n"><span class="pre">HSD_sink_res</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">heatshrink_decoder_sink</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv418heatshrink_decoder" title="heatshrink_decoder"><span class="n"><span class="pre">heatshrink_decoder</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">hsd</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">in_buf</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">size</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">input_size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423heatshrink_decoder_sinkP18heatshrink_decoderP7uint8_t6size_tP6size_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Sink data into the decoder. </p>
+<p>Sink at most SIZE bytes from IN_BUF into the decoder. The INPUT_SIZE is set to indicate how many bytes were actually sunk (in case a buffer was filled).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hsd</strong> – Pointer to the decoder. </p></li>
+<li><p><strong>in_buf</strong> – Pointer to the input buffer. </p></li>
+<li><p><strong>size</strong> – Size of the input data. </p></li>
+<li><p><strong>input_size</strong> – Pointer to the variable indicating the number of bytes actually sunk.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>HSD_sink_res value indicating the result of the operation. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv423heatshrink_decoder_pollP18heatshrink_decoderP7uint8_t6size_tP6size_t">
+<span id="_CPPv323heatshrink_decoder_pollP18heatshrink_decoderP7uint8_t6size_tP6size_t"></span><span id="_CPPv223heatshrink_decoder_pollP18heatshrink_decoderP7uint8_t6size_tP6size_t"></span><span id="heatshrink_decoder_poll__heatshrink_decoderP.uint8_tP.s.sP"></span><span class="target" id="heatshrink__decoder_8h_1a38406b03b9df8b993c6a3fa144675627"></span><a class="reference internal" href="#_CPPv412HSD_poll_res" title="HSD_poll_res"><span class="n"><span class="pre">HSD_poll_res</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">heatshrink_decoder_poll</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv418heatshrink_decoder" title="heatshrink_decoder"><span class="n"><span class="pre">heatshrink_decoder</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">hsd</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">out_buf</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">out_buf_size</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">output_size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423heatshrink_decoder_pollP18heatshrink_decoderP7uint8_t6size_tP6size_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Poll for output from the decoder. </p>
+<p>Poll for output from the decoder, copying at most OUT_BUF_SIZE bytes into OUT_BUF (setting OUTPUT_SIZE to the actual amount copied).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hsd</strong> – Pointer to the decoder. </p></li>
+<li><p><strong>out_buf</strong> – Pointer to the output buffer. </p></li>
+<li><p><strong>out_buf_size</strong> – Size of the output buffer. </p></li>
+<li><p><strong>output_size</strong> – Pointer to the variable indicating the number of bytes actually output.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>HSD_poll_res value indicating the result of the operation. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv425heatshrink_decoder_finishP18heatshrink_decoder">
+<span id="_CPPv325heatshrink_decoder_finishP18heatshrink_decoder"></span><span id="_CPPv225heatshrink_decoder_finishP18heatshrink_decoder"></span><span id="heatshrink_decoder_finish__heatshrink_decoderP"></span><span class="target" id="heatshrink__decoder_8h_1aac3da3fb98517f7f6121711b0c995616"></span><a class="reference internal" href="#_CPPv414HSD_finish_res" title="HSD_finish_res"><span class="n"><span class="pre">HSD_finish_res</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">heatshrink_decoder_finish</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv418heatshrink_decoder" title="heatshrink_decoder"><span class="n"><span class="pre">heatshrink_decoder</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">hsd</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425heatshrink_decoder_finishP18heatshrink_decoder" title="Link to this definition"></a><br /></dt>
+<dd><p>Notify the decoder that the input stream is finished. </p>
+<p>Notify the decoder that the input stream is finished. If the return value is HSDR_FINISH_MORE, there is still more output, so call <code class="docutils literal notranslate"><span class="pre">heatshrink_decoder_poll</span></code> and repeat.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hsd</strong> – Pointer to the decoder.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>HSD_finish_res value indicating the result of the operation. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv418heatshrink_decoder">
+<span id="_CPPv318heatshrink_decoder"></span><span id="_CPPv218heatshrink_decoder"></span><span id="heatshrink_decoder"></span><span class="target" id="structheatshrink__decoder"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">heatshrink_decoder</span></span></span><a class="headerlink" href="#_CPPv418heatshrink_decoder" title="Link to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;heatshrink_decoder.h&gt;</em></div>
+<p>Heatshrink decoder structure. </p>
+<p>This structure represents a Heatshrink decoder. It contains various fields necessary for the decoding process. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N18heatshrink_decoder10input_sizeE">
+<span id="_CPPv3N18heatshrink_decoder10input_sizeE"></span><span id="_CPPv2N18heatshrink_decoder10input_sizeE"></span><span id="heatshrink_decoder::input_size__uint16_t"></span><span class="target" id="structheatshrink__decoder_1af8addbc2b2bbefb46b7a48840fdd78c3"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">input_size</span></span></span><a class="headerlink" href="#_CPPv4N18heatshrink_decoder10input_sizeE" title="Link to this definition"></a><br /></dt>
+<dd><p>Bytes in the input buffer. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N18heatshrink_decoder11input_indexE">
+<span id="_CPPv3N18heatshrink_decoder11input_indexE"></span><span id="_CPPv2N18heatshrink_decoder11input_indexE"></span><span id="heatshrink_decoder::input_index__uint16_t"></span><span class="target" id="structheatshrink__decoder_1af5cc7b7b315141c1b3994ba27de762ec"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">input_index</span></span></span><a class="headerlink" href="#_CPPv4N18heatshrink_decoder11input_indexE" title="Link to this definition"></a><br /></dt>
+<dd><p>Offset to the next unprocessed input byte. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N18heatshrink_decoder12output_countE">
+<span id="_CPPv3N18heatshrink_decoder12output_countE"></span><span id="_CPPv2N18heatshrink_decoder12output_countE"></span><span id="heatshrink_decoder::output_count__uint16_t"></span><span class="target" id="structheatshrink__decoder_1a727f652cee7283f52e76687e7204a27f"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output_count</span></span></span><a class="headerlink" href="#_CPPv4N18heatshrink_decoder12output_countE" title="Link to this definition"></a><br /></dt>
+<dd><p>How many bytes to output. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N18heatshrink_decoder12output_indexE">
+<span id="_CPPv3N18heatshrink_decoder12output_indexE"></span><span id="_CPPv2N18heatshrink_decoder12output_indexE"></span><span id="heatshrink_decoder::output_index__uint16_t"></span><span class="target" id="structheatshrink__decoder_1af21c89aee92702ba2ae8c951c966cb97"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output_index</span></span></span><a class="headerlink" href="#_CPPv4N18heatshrink_decoder12output_indexE" title="Link to this definition"></a><br /></dt>
+<dd><p>Index for bytes to output. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N18heatshrink_decoder10head_indexE">
+<span id="_CPPv3N18heatshrink_decoder10head_indexE"></span><span id="_CPPv2N18heatshrink_decoder10head_indexE"></span><span id="heatshrink_decoder::head_index__uint16_t"></span><span class="target" id="structheatshrink__decoder_1ae79677d2e3c1b3541188ff15c37de2c5"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">head_index</span></span></span><a class="headerlink" href="#_CPPv4N18heatshrink_decoder10head_indexE" title="Link to this definition"></a><br /></dt>
+<dd><p>Head of the window buffer. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N18heatshrink_decoder5stateE">
+<span id="_CPPv3N18heatshrink_decoder5stateE"></span><span id="_CPPv2N18heatshrink_decoder5stateE"></span><span id="heatshrink_decoder::state__uint8_t"></span><span class="target" id="structheatshrink__decoder_1af9c2124e9b615043906947898075b808"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">state</span></span></span><a class="headerlink" href="#_CPPv4N18heatshrink_decoder5stateE" title="Link to this definition"></a><br /></dt>
+<dd><p>Current state machine node. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N18heatshrink_decoder12current_byteE">
+<span id="_CPPv3N18heatshrink_decoder12current_byteE"></span><span id="_CPPv2N18heatshrink_decoder12current_byteE"></span><span id="heatshrink_decoder::current_byte__uint8_t"></span><span class="target" id="structheatshrink__decoder_1a0d0a0856268afcf555ccf94e0a73653f"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">current_byte</span></span></span><a class="headerlink" href="#_CPPv4N18heatshrink_decoder12current_byteE" title="Link to this definition"></a><br /></dt>
+<dd><p>Current byte of input. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N18heatshrink_decoder9bit_indexE">
+<span id="_CPPv3N18heatshrink_decoder9bit_indexE"></span><span id="_CPPv2N18heatshrink_decoder9bit_indexE"></span><span id="heatshrink_decoder::bit_index__uint8_t"></span><span class="target" id="structheatshrink__decoder_1aaf4bbf17d637390c3e724cadc702e1b5"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bit_index</span></span></span><a class="headerlink" href="#_CPPv4N18heatshrink_decoder9bit_indexE" title="Link to this definition"></a><br /></dt>
+<dd><p>Current bit index. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N18heatshrink_decoder10window_sz2E">
+<span id="_CPPv3N18heatshrink_decoder10window_sz2E"></span><span id="_CPPv2N18heatshrink_decoder10window_sz2E"></span><span id="heatshrink_decoder::window_sz2__uint8_t"></span><span class="target" id="structheatshrink__decoder_1a809b430d8963205d6dcb44e97d476482"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">window_sz2</span></span></span><a class="headerlink" href="#_CPPv4N18heatshrink_decoder10window_sz2E" title="Link to this definition"></a><br /></dt>
+<dd><p>Window buffer bits. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N18heatshrink_decoder13lookahead_sz2E">
+<span id="_CPPv3N18heatshrink_decoder13lookahead_sz2E"></span><span id="_CPPv2N18heatshrink_decoder13lookahead_sz2E"></span><span id="heatshrink_decoder::lookahead_sz2__uint8_t"></span><span class="target" id="structheatshrink__decoder_1abf7f4b090c7d5a65e4687b95da3d3677"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lookahead_sz2</span></span></span><a class="headerlink" href="#_CPPv4N18heatshrink_decoder13lookahead_sz2E" title="Link to this definition"></a><br /></dt>
+<dd><p>Lookahead bits. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N18heatshrink_decoder17input_buffer_sizeE">
+<span id="_CPPv3N18heatshrink_decoder17input_buffer_sizeE"></span><span id="_CPPv2N18heatshrink_decoder17input_buffer_sizeE"></span><span id="heatshrink_decoder::input_buffer_size__uint16_t"></span><span class="target" id="structheatshrink__decoder_1a38c2ac095037b8c74bd4ade18211a696"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">input_buffer_size</span></span></span><a class="headerlink" href="#_CPPv4N18heatshrink_decoder17input_buffer_sizeE" title="Link to this definition"></a><br /></dt>
+<dd><p>Input buffer size. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N18heatshrink_decoder7buffersE">
+<span id="_CPPv3N18heatshrink_decoder7buffersE"></span><span id="_CPPv2N18heatshrink_decoder7buffersE"></span><span id="heatshrink_decoder::buffers__uint8_tA"></span><span class="target" id="structheatshrink__decoder_1a68d23106da9a1c431c6ab082c7fb04d3"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">buffers</span></span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#_CPPv4N18heatshrink_decoder7buffersE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Heatshrink API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="heatshrink_encoder.html" class="btn btn-neutral float-right" title="Heatshrink encoder" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, ISC License.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

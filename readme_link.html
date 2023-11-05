@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heatshrink on Zephyr &mdash; Heatshrink on Zephyr 0.4.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=c87aa342"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Heatshrink on Zephyr
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="api/heatshrink_decoder.html">Heatshrink decoder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/heatshrink_encoder.html">Heatshrink encoder</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Heatshrink on Zephyr</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Heatshrink on Zephyr</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/readme_link.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="heatshrink-on-zephyr">
+<h1>Heatshrink on Zephyr<a class="headerlink" href="#heatshrink-on-zephyr" title="Link to this heading"></a></h1>
+<p>Zephyr integration as external module of a data compression/decompression library for embedded/real-time systems.
+Heatshrink has been forked from <a class="reference external" href="https://github.com/atomicobject/heatshrink">this original project</a>.</p>
+<section id="build-status">
+<h2>Build Status<a class="headerlink" href="#build-status" title="Link to this heading"></a></h2>
+<p><img alt="Build artifacts" src="https://github.com/kickmaker/heatshrink/actions/workflows/base_build_test.yml/badge.svg?branch=zephyr" />
+<img alt="Build artifacts" src="https://github.com/kickmaker/heatshrink/actions/workflows/zephyr_build_test.yml/badge.svg?branch=zephyr" />
+<img alt="CodeQL" src="https://github.com/kickmaker/heatshrink/actions/workflows/codeql.yml/badge.svg?branch=zephyr" /></p>
+</section>
+<section id="key-features">
+<h2>Key Features:<a class="headerlink" href="#key-features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Low memory usage (as low as 50 bytes)</strong>
+It is useful for some cases with less than 50 bytes, and useful
+for many general cases with &lt; 300 bytes.</p></li>
+<li><p><strong>Incremental, bounded CPU use</strong>
+You can chew on input data in arbitrarily tiny bites.
+This is a useful property in hard real-time environments.</p></li>
+<li><p><strong>Can use either static or dynamic memory allocation</strong>
+The library doesn’t impose any constraints on memory management.</p></li>
+<li><p><strong>ISC license</strong>
+You can use it freely, even for commercial purposes.</p></li>
+</ul>
+</section>
+<section id="zephyr-integration-getting-started">
+<h2>Zephyr integration: Getting started<a class="headerlink" href="#zephyr-integration-getting-started" title="Link to this heading"></a></h2>
+<p>Add this project as external module by appending your west.yml project file as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">manifest</span><span class="p">:</span>
+  <span class="n">remotes</span><span class="p">:</span>
+    <span class="o">-</span> <span class="o">...</span>
+    <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">km</span>
+      <span class="n">url</span><span class="o">-</span><span class="n">base</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">kickmaker</span> 
+
+  <span class="n">projects</span><span class="p">:</span>
+    <span class="o">-</span> <span class="o">...</span>
+    <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">heatshrink</span>
+      <span class="n">remote</span><span class="p">:</span> <span class="n">km</span>
+      <span class="n">revision</span><span class="p">:</span> <span class="n">zephyr</span>
+      <span class="n">path</span><span class="p">:</span> <span class="n">modules</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">heatshrink</span>
+</pre></div>
+</div>
+<p>Then, update your Zephyr workspace:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">west</span> <span class="n">update</span>
+</pre></div>
+</div>
+</section>
+<section id="zephyr-integration-version">
+<h2>Zephyr integration: Version<a class="headerlink" href="#zephyr-integration-version" title="Link to this heading"></a></h2>
+<p>For sustainability, it would be prefered to target a specific version:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.5.0">Zephyr 3.5 release</a> : 90027f015c1446a1925c3d9a7fabbc8908c26f27</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">projects</span><span class="p">:</span>
+    <span class="o">-</span> <span class="o">...</span>
+    <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">heatshrink</span>
+      <span class="n">remote</span><span class="p">:</span> <span class="n">km</span>
+      <span class="n">revision</span><span class="p">:</span> <span class="mi">90027</span><span class="n">f015c1446a1925c3d9a7fabbc8908c26f27</span>
+      <span class="n">path</span><span class="p">:</span> <span class="n">modules</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">heatshrink</span>
+</pre></div>
+</div>
+</section>
+<section id="zephyr-integration-sample">
+<h2>Zephyr integration: Sample<a class="headerlink" href="#zephyr-integration-sample" title="Link to this heading"></a></h2>
+<p>Samples exists in the <code class="docutils literal notranslate"><span class="pre">samples</span></code> folder.</p>
+<p>Go to the sample folder to build and run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">west</span> <span class="n">build</span> <span class="o">-</span><span class="n">b</span> <span class="o">&lt;</span><span class="n">your_board</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span>
+</pre></div>
+</div>
+</section>
+<section id="memory-usage-considerations">
+<h2>Memory usage considerations<a class="headerlink" href="#memory-usage-considerations" title="Link to this heading"></a></h2>
+<p>This module (as original one) allows you to choose memory allocation strategy
+to fit footprints requirements.
+Heatshrink provides some settings to optimize / fine tune compression ratio VS
+footprint usage.
+These parameters <code class="docutils literal notranslate"><span class="pre">window_sz2</span></code>, <code class="docutils literal notranslate"><span class="pre">lookahead_sz2</span></code> and <code class="docutils literal notranslate"><span class="pre">input_buffer_size</span></code> are explained in
+<a class="reference internal" href="#configuration-official-heatshrink-documentation"><span class="xref myst">Configuration</span></a> chapter.</p>
+<section id="static-allocation">
+<h3>Static allocation<a class="headerlink" href="#static-allocation" title="Link to this heading"></a></h3>
+<p>In this mode (default mode, or CONFIG_HEATSHRINK_DYNAMIC_ALLOC=n), the module will reserve
+statically allocated memory space to process encoding and/or decoding, mainly based on parameters
+fixed at compilation time.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">window_sz2</span></code> : CONFIG_HEATSHRINK_STATIC_WINDOW_BITS</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lookahead_sz2</span></code> : CONFIG_HEATSHRINK_STATIC_LOOKAHEAD_BITS</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input_buffer_size</span></code> : CONFIG_HEATSHRINK_STATIC_INPUT_BUFFER_SIZE</p></li>
+</ul>
+<p>Please not that a file must be decoded with the same parameters as used for encoding.
+So, in this mode saving memory footprint, it comes to YOU to fix these parameters.</p>
+</section>
+<section id="dynamic-allocation">
+<h3>Dynamic allocation<a class="headerlink" href="#dynamic-allocation" title="Link to this heading"></a></h3>
+<p>The most flexible solution from a software point of view (CONFIG_HEATSHRINK_DYNAMIC_ALLOC=y).</p>
+<p>Heatshrink parameters could be changed at runtime but requires a heap.</p>
+</section>
+</section>
+<section id="footprint">
+<h2>Footprint<a class="headerlink" href="#footprint" title="Link to this heading"></a></h2>
+<p>By default, decoder and encoder are enabled. To save memory footprint you can disable them independantly:</p>
+<ul class="simple">
+<li><p>CONFIG_HEATSHRINK_DECODER=n</p></li>
+<li><p>CONFIG_HEATSHRINK_ENCODER=n</p></li>
+</ul>
+</section>
+<section id="basic-usage-official-heatshrink-documentation">
+<h2>Basic Usage (official Heatshrink documentation)<a class="headerlink" href="#basic-usage-official-heatshrink-documentation" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Allocate a <code class="docutils literal notranslate"><span class="pre">heatshrink_encoder</span></code> or <code class="docutils literal notranslate"><span class="pre">heatshrink_decoder</span></code> state machine
+using their <code class="docutils literal notranslate"><span class="pre">alloc</span></code> function, or statically allocate one and call their
+<code class="docutils literal notranslate"><span class="pre">reset</span></code> function to initialize them. (See below for configuration
+options.)</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">sink</span></code> to sink an input buffer into the state machine. The
+<code class="docutils literal notranslate"><span class="pre">input_size</span></code> pointer argument will be set to indicate how many bytes of
+the input buffer were actually consumed. (If 0 bytes were conusmed, the
+buffer is full.)</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">poll</span></code> to move output from the state machine into an output
+buffer. The <code class="docutils literal notranslate"><span class="pre">output_size</span></code> pointer argument will be set to indicate how
+many bytes were output, and the function return value will indicate
+whether further output is available. (The state machine may not output
+any data until it has received enough input.)</p></li>
+</ol>
+<p>Repeat steps 2 and 3 to stream data through the state machine. Since
+it’s doing data compression, the input and output sizes can vary
+significantly. Looping will be necessary to buffer the input and output
+as the data is processed.</p>
+<ol class="arabic simple" start="4">
+<li><p>When the end of the input stream is reached, call <code class="docutils literal notranslate"><span class="pre">finish</span></code> to notify
+the state machine that no more input is available. The return value from
+<code class="docutils literal notranslate"><span class="pre">finish</span></code> will indicate whether any output remains. if so, call <code class="docutils literal notranslate"><span class="pre">poll</span></code> to
+get more.</p></li>
+</ol>
+<p>Continue calling <code class="docutils literal notranslate"><span class="pre">finish</span></code> and <code class="docutils literal notranslate"><span class="pre">poll</span></code>ing to flush remaining output until
+<code class="docutils literal notranslate"><span class="pre">finish</span></code> indicates that the output has been exhausted.</p>
+<p>Sinking more data after <code class="docutils literal notranslate"><span class="pre">finish</span></code> has been called will not work without
+calling <code class="docutils literal notranslate"><span class="pre">reset</span></code> on the state machine.</p>
+</section>
+<section id="configuration-official-heatshrink-documentation">
+<h2>Configuration (official Heatshrink documentation)<a class="headerlink" href="#configuration-official-heatshrink-documentation" title="Link to this heading"></a></h2>
+<p>heatshrink has a couple configuration options, which impact its resource
+usage and how effectively it can compress data. These are set when
+dynamically allocating an encoder or decoder, or in <code class="docutils literal notranslate"><span class="pre">heatshrink_config.h</span></code>
+if they are statically allocated.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">window_sz2</span></code>, <code class="docutils literal notranslate"><span class="pre">-w</span></code> in the CLI: Set the window size to 2^W bytes.</p></li>
+</ul>
+<p>The window size determines how far back in the input can be searched for
+repeated patterns. A <code class="docutils literal notranslate"><span class="pre">window_sz2</span></code> of 8 will only use 256 bytes (2^8),
+while a <code class="docutils literal notranslate"><span class="pre">window_sz2</span></code> of 10 will use 1024 bytes (2^10). The latter uses
+more memory, but may also compress more effectively by detecting more
+repetition.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">window_sz2</span></code> setting currently must be between 4 and 15.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lookahead_sz2</span></code>, <code class="docutils literal notranslate"><span class="pre">-l</span></code> in the CLI: Set the lookahead size to 2^L bytes.</p></li>
+</ul>
+<p>The lookahead size determines the max length for repeated patterns that
+are found. If the <code class="docutils literal notranslate"><span class="pre">lookahead_sz2</span></code> is 4, a 50-byte run of ‘a’ characters
+will be represented as several repeated 16-byte patterns (2^4 is 16),
+whereas a larger <code class="docutils literal notranslate"><span class="pre">lookahead_sz2</span></code> may be able to represent it all at
+once. The number of bits used for the lookahead size is fixed, so an
+overly large lookahead size can reduce compression by adding unused
+size bits to small patterns.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">lookahead_sz2</span></code> setting currently must be between 3 and the
+<code class="docutils literal notranslate"><span class="pre">window_sz2</span></code> - 1.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">input_buffer_size</span></code> - How large an input buffer to use for the
+decoder. This impacts how much work the decoder can do in a single
+step, and a larger buffer will use more memory. An extremely small
+buffer (say, 1 byte) will add overhead due to lots of suspend/resume
+function calls, but should not change how well data compresses.</p></li>
+</ul>
+<section id="recommended-defaults-official-heatshrink-documentation">
+<h3>Recommended Defaults (official Heatshrink documentation)<a class="headerlink" href="#recommended-defaults-official-heatshrink-documentation" title="Link to this heading"></a></h3>
+<p>For embedded/low memory contexts, a <code class="docutils literal notranslate"><span class="pre">window_sz2</span></code> in the 8 to 10 range is
+probably a good default, depending on how tight memory is. Smaller or
+larger window sizes may make better trade-offs in specific
+circumstances, but should be checked with representative data.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">lookahead_sz2</span></code> should probably start near the <code class="docutils literal notranslate"><span class="pre">window_sz2</span></code>/2, e.g.
+-w 8 -l 4 or -w 10 -l 5. The command-line program can be used to measure
+how well test data works with different settings.</p>
+</section>
+</section>
+<section id="more-information-and-benchmarks-official-heatshrink-documentation">
+<h2>More Information and Benchmarks: (official Heatshrink documentation)<a class="headerlink" href="#more-information-and-benchmarks-official-heatshrink-documentation" title="Link to this heading"></a></h2>
+<p>heatshrink is based on <a class="reference external" href="http://en.wikipedia.org/wiki/Lempel-Ziv-Storer-Szymanski">LZSS</a>, since it’s particularly suitable for
+compression in small amounts of memory. It can use an optional, small
+<a class="reference external" href="http://spin.atomicobject.com/2014/01/13/lightweight-indexing-for-embedded-systems/">index</a> to make compression significantly faster, but otherwise can run
+in under 100 bytes of memory. The index currently adds 2^(window size+1)
+bytes to memory usage for compression, and temporarily allocates 512
+bytes on the stack during index construction (if the index is enabled).</p>
+<p>For more information, see the <a class="reference external" href="http://spin.atomicobject.com/2013/03/14/heatshrink-embedded-data-compression/">blog post</a> for an overview, and the
+<code class="docutils literal notranslate"><span class="pre">heatshrink_encoder.h</span></code> / <code class="docutils literal notranslate"><span class="pre">heatshrink_decoder.h</span></code> header files for API
+documentation.</p>
+</section>
+<section id="contribution">
+<h2>Contribution<a class="headerlink" href="#contribution" title="Link to this heading"></a></h2>
+<p>Contributions are welcomed : feel free to open PR.
+zephyr branch is the default (and targeted one) according to Zephyr External modules
+guidelines.</p>
+<section id="thanks">
+<h3>Thanks<a class="headerlink" href="#thanks" title="Link to this heading"></a></h3>
+<p>The following developers have already contributed to that module:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ClovisCorde">&#64;ClovisCorde</a></p></li>
+<li><p><a class="reference external" href="https://github.com/tyalie">&#64;tyalie</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, ISC License.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
