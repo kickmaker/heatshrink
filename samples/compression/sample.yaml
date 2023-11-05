@@ -12,6 +12,12 @@ common:
     regex:
       - "Validation done. (.*)"
 tests:
+  sample.compression.heatshrink.build:
+    build_only: true
+    tags:
+      - compression
+      - heatshrink
+  
   sample.compression.heatshrink:
     integration_platforms:
       - qemu_riscv64
