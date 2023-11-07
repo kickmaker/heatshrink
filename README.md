@@ -9,6 +9,10 @@ Heatshrink has been forked from [this original project](https://github.com/atomi
 ![Build artifacts](https://github.com/kickmaker/heatshrink/actions/workflows/zephyr_build_test.yml/badge.svg?branch=zephyr)
 ![CodeQL](https://github.com/kickmaker/heatshrink/actions/workflows/codeql.yml/badge.svg?branch=zephyr)
 
+## API Documentation
+
+Online documentation is available [here](https://kickmaker.github.io/heatshrink/).
+
 ## Key Features:
 
 - **Low memory usage (as low as 50 bytes)**

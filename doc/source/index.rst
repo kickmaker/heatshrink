@@ -14,7 +14,7 @@ Heatshrink API
 
   api/*
 
-.. include:: README_link.md
+.. include:: readme_link.md
    :parser: myst_parser.sphinx_
 
 
