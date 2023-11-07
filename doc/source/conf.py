@@ -14,7 +14,7 @@ release = '0.4.1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['breathe','sphinx.ext.autodoc', 'myst_parser']
+extensions = ['breathe','sphinx.ext.autodoc', 'myst_parser', 'sphinx.ext.graphviz']
 breathe_projects = {'Heatshrink':'../xml'}
 breathe_default_project = 'Heatshrink'
 
