@@ -9,3 +9,5 @@ test_heatshrink_static
 *.dSYM
 *.exe
 benchmark_out/
+doc/build
+doc/xml
