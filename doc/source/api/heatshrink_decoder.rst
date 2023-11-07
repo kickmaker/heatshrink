@@ -6,6 +6,10 @@
 Heatshrink decoder
 ==================
 
+Decoder state diagram:
+
+.. graphviz:: ../../../dec_sm.dot
+
 .. doxygenfile:: heatshrink_decoder.h
    :project: Heatshrink
 

@@ -7,8 +7,10 @@
 Heatshrink encoder
 ==================
 
+Encoder state diagram:
+
+.. graphviz:: ../../../enc_sm.dot
+
 .. doxygenfile:: heatshrink_encoder.h
    :project: Heatshrink
 
-.. .. doxygenfile:: heatshrink_decoder.h
-..    :project: Heatshrink
