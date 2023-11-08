@@ -8,8 +8,8 @@
 #include <zephyr/kernel.h>
 #include <string.h>
 #include <stdlib.h>
-#include "heatshrink_encoder.h"
-#include "heatshrink_decoder.h"
+#include <heatshrink_encoder.h>
+#include <heatshrink_decoder.h>
 
 static heatshrink_encoder hse;
 static heatshrink_decoder hsd;

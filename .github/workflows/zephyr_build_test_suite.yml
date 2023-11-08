@@ -1,0 +1,35 @@
+name: Zephyr build & test
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    container: ghcr.io/zephyrproject-rtos/ci:v0.26.2 
+    env:
+      CMAKE_PREFIX_PATH: /opt/toolchains
+    steps:
+
+      - name: Pull Zephyr last main revision
+        run: |
+          git clone -b main https://github.com/zephyrproject-rtos/zephyr.git
+
+      - name: Initialize Zephyr workspace
+        working-directory: zephyr/
+        run: |
+          west init -l .
+          west update -o=--depth=1 -n
+
+      - name: Checkout heatshrink
+        uses: actions/checkout@v3
+        with:
+          path: modules/lib/heatshrink
+
+      - name: Build & test sample
+        working-directory: modules/lib/heatshrink/tests/
+        run: |
+          west twister -T . --inline-logs --integration --extra-args ZEPHYR_MODULES=/__w/heatshrink/heatshrink/modules/lib/heatshrink

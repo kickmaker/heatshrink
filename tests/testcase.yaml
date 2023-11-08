@@ -1,0 +1,14 @@
+tests:
+  heatshrink.heatshrink:
+    platform_allow:
+      - qemu_riscv64
+    tags: heatshrink
+    integration_platforms:
+      - qemu_riscv64
+  # heatshrink.heatshrink.progressive:
+  #   extra_args: OVERLAY_CONFIG=progressively_overlay.conf
+  #   platform_allow:
+  #     - qemu_riscv64
+  #   tags: heatshrink
+  #   integration_platforms:
+  #     - qemu_riscv64
